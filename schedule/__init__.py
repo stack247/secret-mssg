@@ -1,6 +1,7 @@
 import datetime
 import logging
 import requests
+import os
 import azure.functions as func
 
 
