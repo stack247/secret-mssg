@@ -13,3 +13,4 @@ Slack Bot to send self-destruct message.
   * `func host start`
   * `ngrok http 7071 --host-header="localhost:7071"`
   * `http://localhost:7071/api/send-secret`
+  
