@@ -2,20 +2,22 @@ import datetime
 import logging
 import requests
 import os
+import json
 import azure.functions as func
 
 
-def main(mytimer: func.TimerRequest, message) -> None:
-    utc_timestamp = datetime.datetime.utcnow().replace(
-        tzinfo=datetime.timezone.utc).isoformat()
+def main(mytimer: func.TimerRequest, messages) -> None:
+    # TODO: Get deletion list from Azure table.
+    all_messages = json.loads(messages)
+    print('-=====- all_messages', all_messages)
 
-    if mytimer.past_due:
-        logging.info('The timer is past due!')
+    # TODO: Filter due list.
 
-    logging.info('Python timer trigger function ran at %s', utc_timestamp)
-
+    # TODO: Delete the message
     bot_token = os.environ['BotToken']
     #delete(bot_token, '', '')
+
+    # TODO: Delete message in table.
 
 # TODO: move to common class.
 def delete(token: str, channel: str, ts: str):
