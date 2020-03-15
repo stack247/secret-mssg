@@ -19,7 +19,7 @@
     {
       "name": "message",
       "type": "table",
-      "tableName": "secretMessages",
+      "tableName": "SecretMssg",
       "connection": "AzureWebJobsStorage",
       "direction": "out"
     }
