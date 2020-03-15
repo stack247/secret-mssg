@@ -15,6 +15,13 @@
       "type": "http",
       "direction": "out",
       "name": "$return"
+    },
+    {
+      "name": "message",
+      "type": "table",
+      "tableName": "secretMessages",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
     }
   ]
 }
