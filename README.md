@@ -7,9 +7,11 @@ Slack Bot to send self-destruct message.
 * Usage example
 * Requirements
   * Python 3.6.6
+  * Azure Storage emulator
   * Function core tool (running local)
     * https://github.com/Azure/azure-functions-core-tools
 * Local dev
+  * Run local storage emulator
   * `py -m venv ./venv`
   * `./venv/Scripts/Activate`
   * `pip install -r requirements.txt`
