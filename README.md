@@ -8,6 +8,8 @@ Slack Bot to send self-destruct message.
 * Requirements
   * Python 3.6.6
 * Local dev
+  * `py -m venv ./venv`
+  * `./venv/Scripts/Activate`
   * `pip install -r requirements.txt`
   * `.venv/Scripts/activate`
   * `func host start`
