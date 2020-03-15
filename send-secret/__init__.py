@@ -26,7 +26,8 @@ def main(req: func.HttpRequest, message: func.Out[str]) -> func.HttpResponse:
     #  'PartitionKey': '',
     #  'RowKey': '',
     #  'channel': '',
-    #  'ts': ''
+    #  'ts': '',
+    #  'due': ''
     #}
     #message.set(json.dumps(data))
     
