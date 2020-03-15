@@ -1,6 +1,7 @@
 {
   "IsEncrypted": false,
   "Values": {
+    "BotToken": "xxxx-12345",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "python"
   }

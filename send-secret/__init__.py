@@ -1,8 +1,11 @@
 import logging
 import azure.functions as func
+import os
 
 def main(req: func.HttpRequest, message: func.Out[str]) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
+
+    bot_token = os.environ['BotToken']
 
     name = req.params.get('name')
     if not name:
