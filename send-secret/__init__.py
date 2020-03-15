@@ -1,25 +1,28 @@
 import logging
-import azure.functions as func
 import os
+import requests
+import azure.functions as func
+
 
 def main(req: func.HttpRequest, message: func.Out[str]) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     bot_token = os.environ['BotToken']
 
-    name = req.params.get('name')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
+    post(bot_token, '', '')
 
-    if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
-    else:
-        return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
-             status_code=200
-        )
+    data = {
+      'PartitionKey': '',
+      'RowKey': '',
+      'channel': '',
+      'ts': ''
+    }
+    message.set(json.dumps(data))
+    
+    return func.HttpResponse(status_code=200)
+
+# TODO: move to common class.
+def post(token: str, channel: str, message: str):
+    url = f'https://slack.com/api/chat.postMessage?token={token}&channel={channel}&text={message}'
+    res = requests.get(url=url)
+    
